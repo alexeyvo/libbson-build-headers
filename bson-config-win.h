@@ -80,11 +80,46 @@
 
 
 /*
+ * Define to 1 if you have reallocf available on your platform.
+ */
+#define BSON_HAVE_REALLOCF 0
+#if BSON_HAVE_REALLOCF != 1
+# undef BSON_HAVE_REALLOCF
+#endif
+
+
+/*
+ * Define to 1 if you have _set_output_format (VS2013 and older).
+ */
+#define BSON_NEEDS_SET_OUTPUT_FORMAT 1
+#if BSON_NEEDS_SET_OUTPUT_FORMAT != 1
+# undef BSON_NEEDS_SET_OUTPUT_FORMAT
+#endif
+
+/*
+ * Define to 1 if you have struct timespec available on your platform.
+ */
+#define BSON_HAVE_TIMESPEC 0
+#if BSON_HAVE_TIMESPEC != 1
+# undef BSON_HAVE_TIMESPEC
+#endif
+
+
+/*
  * Define to 1 if you want extra aligned types in libbson
  */
 #define BSON_EXTRA_ALIGN 1
 #if BSON_EXTRA_ALIGN != 1
 # undef BSON_EXTRA_ALIGN
+#endif
+
+
+/*
+ * Define to 1 if you have SYS_gettid syscall
+ */
+#define BSON_HAVE_SYSCALL_TID 0
+#if BSON_HAVE_SYSCALL_TID != 1
+# undef BSON_HAVE_SYSCALL_TID
 #endif
 
 
